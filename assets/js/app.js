@@ -19,9 +19,12 @@ function animate() {
   // ctx.fillRect(10, canvas.height - 90, 60, 40);
   bat.update();
   bat.draw();
+  handleParticles();
 
   requestAnimationFrame(animate);
+
   hover += 0.12;
+  hue++;
 }
 
 animate();
