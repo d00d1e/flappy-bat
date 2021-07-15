@@ -3,8 +3,8 @@ const particlesArray = [];
 class Particle {
   constructor() {
     this.x = bat.x;
-    this.y = bat.y;
-    this.size = Math.random() * 5 + 3;
+    this.y = bat.y + 35;
+    this.size = Math.random() * 4 + 3;
     this.speedY = Math.random() * 1 - 0.5;
     this.color = `hsla(${hue}, 100%, 50%, 0.8)`;
   }

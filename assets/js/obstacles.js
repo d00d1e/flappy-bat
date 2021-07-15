@@ -2,11 +2,12 @@ const obstaclesArray = [];
 
 class Obstacle {
   constructor() {
-    this.top = Math.random() * (canvas.height / 3) + 45;
-    this.bottom = Math.random() * (canvas.height / 3) + 45;
-    this.x = canvas.clientWidth;
-    this.width = 40;
-    this.color = `hsla(${hue}, 100%, 50%, 0.8)`;
+    this.top = Math.random() * (canvas.height / 3) + 25;
+    this.bottom = Math.random() * (canvas.height / 3) + 25;
+    this.x = canvas.width;
+    this.width = 65;
+    // this.color = `hsla(${hue}, 100%, 50%, 0.8)`;
+    this.color = "#95A96D";
     this.counted = false;
   }
 
@@ -27,7 +28,7 @@ class Obstacle {
 }
 
 function handleObstacles() {
-  if (frame % 80 === 0) {
+  if (frame % 100 === 0) {
     obstaclesArray.unshift(new Obstacle());
   }
 

@@ -13,10 +13,10 @@ let score = 0;
 let gameSpeed = 2;
 
 const gradient = ctx.createLinearGradient(0, 0, 0, 70);
-gradient.addColorStop("0.4", "#fff");
-gradient.addColorStop("0.5", "#000");
-gradient.addColorStop("0.7", "#fff");
-gradient.addColorStop("0.9", "#000");
+gradient.addColorStop("0.4", "#000");
+gradient.addColorStop("0.5", "#fff");
+gradient.addColorStop("0.7", "#000");
+gradient.addColorStop("0.9", "#fff");
 
 //BACKGROUND
 const background = new Image();
@@ -54,7 +54,7 @@ function animate() {
   if (handleCollisions()) return;
 
   //score display
-  ctx.fillStyle = gradient;
+  ctx.fillStyle = "white";
   ctx.font = "70px Georgia";
   ctx.strokeText(score, 450, 70);
   ctx.fillText(score, 450, 70);
@@ -74,6 +74,7 @@ window.addEventListener("keydown", (e) => {
 
 window.addEventListener("keyup", (e) => {
   if (e.code === "Space") spacePressed = false;
+  bat.frameX = 0;
 });
 
 // COLLISION
@@ -86,7 +87,7 @@ function handleCollisions() {
       bat.x < obstaclesArray[i].x + obstaclesArray[i].width &&
       bat.x + bat.width > obstaclesArray[i].x &&
       ((bat.y < 0 + obstaclesArray[i].top && bat.y + bat.height > 0) ||
-        (bat.y > canvas.height - obstaclesArray[i].bottom &&
+        (bat.y > canvas.height - obstaclesArray[i].bottom - 30 &&
           bat.y + bat.height < canvas.height))
     ) {
       //collision detected
